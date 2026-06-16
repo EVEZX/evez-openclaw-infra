@@ -1,0 +1,17 @@
+[Unit]
+Description=EVEZ Provider Gateway v2
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/openclaw/evez-ecosystem/evez-provider
+Environment=VULTR_API_KEY=R55BTKQKXKXW3HQRU4DVGFRCTF4LAY25FW2A
+Environment=GEMINI_API_KEY=AIzaSy…gJfM
+Environment=PROVIDER_PORT=9100
+ExecStart=/usr/bin/python3 gateway-v2.py
+Restart=always
+RestartSec=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=default.target

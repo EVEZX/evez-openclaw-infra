@@ -1,0 +1,14 @@
+[Unit]
+Description=EVEZ Arena
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/openclaw/evez-ecosystem/arena
+ExecStart=/usr/bin/python3 arena.py
+Restart=always
+RestartSec=10
+LimitNOFILE=65535
+
+[Install]
+WantedBy=default.target
